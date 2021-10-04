@@ -2,13 +2,14 @@ import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import Image from 'react-bootstrap/Image';
 import Nav from 'react-bootstrap/Nav';
+import { NavLink } from 'react-router-dom';
 import planet from '../img/planet.png';
 
 const NavBar = () => {
   const links = [
     {
       id: 1,
-      path: '/',
+      path: '/rockets',
       name: 'Rockets',
     },
     {
@@ -32,19 +33,23 @@ const NavBar = () => {
       <Container className="d-flex justify-content-between">
         <div>
           <Image src={planet} alt="App logo" width="50" />
-          <Navbar.Brand href="/">SpaceX Ships</Navbar.Brand>
+          <Navbar.Brand href="/rockets">SpaceX Ships</Navbar.Brand>
         </div>
         <div>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               {links.map((link) => (
-                <Nav.Link
-                  key={link.id}
-                  href={link.path}
-                >
-                  {link.name}
-                </Nav.Link>
+                <Nav.Item key={link.id}>
+                  <NavLink
+                    className="m-3 text-decoration-none"
+                    eventKey={link.path}
+                    to={link.path}
+                    activeClassName="fw-bold"
+                  >
+                    {link.name}
+                  </NavLink>
+                </Nav.Item>
               ))}
             </Nav>
           </Navbar.Collapse>
