@@ -1,6 +1,9 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import MyProfile from './components/MyProfile';
+import Dragons from './components/Dragons';
+import Missions from './components/Missions';
+import Rockets from './components/Rockets';
 
 function App() {
   return (
@@ -22,18 +25,6 @@ function App() {
       </Switch>
     </Router>
   );
-}
-
-function Dragons() {
-  return <h2>dragons</h2>;
-}
-
-function Rockets() {
-  return <h2>ROCKETS</h2>;
-}
-
-function Missions() {
-  return <h2>MISSIONS</h2>;
 }
 
 export default App;

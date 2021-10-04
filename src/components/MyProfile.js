@@ -1,3 +1,3 @@
-const MyProfile = () => <div className="profile">coming soon</div>;
+const MyProfile = () => <div className="profile"></div>;
 
 export default MyProfile;
