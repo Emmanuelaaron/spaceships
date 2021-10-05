@@ -32,8 +32,11 @@ const NavBar = () => {
     <Navbar bg="light" expand="lg">
       <Container className="d-flex justify-content-between">
         <Navbar.Brand href="/rockets">
+          {' '}
           <Image src={planet} alt="App logo" width="50" className="me-3" />
+          {' '}
           SpaceX Ships
+          {' '}
         </Navbar.Brand>
         <div>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
