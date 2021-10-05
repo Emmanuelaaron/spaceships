@@ -4,7 +4,7 @@ const URL = 'https://api.spacexdata.com/v3/dragons';
 const LOAD = 'spaceships/dragons/LOAD';
 
 // Reducer
-export default (state = {}, action) => {
+export default (state = [], action) => {
   switch (action.type) {
     case (LOAD):
       return action.state;

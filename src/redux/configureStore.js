@@ -4,7 +4,7 @@ import logger from 'redux-logger';
 import dragonReducer from './dragons/dragons';
 
 const reducer = combineReducers({
-  dragon: dragonReducer,
+  dragons: dragonReducer,
 });
 
 const store = createStore(reducer, applyMiddleware(logger, thunk));
