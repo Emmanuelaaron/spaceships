@@ -45,7 +45,7 @@ const NavBar = () => {
                     className="m-3 text-decoration-none"
                     eventKey={link.path}
                     to={link.path}
-                    activeClassName="fw-bold"
+                    activeClassName="fw-bold text-decoration-underline"
                   >
                     {link.name}
                   </NavLink>
