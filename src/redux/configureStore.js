@@ -1,8 +1,11 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
+import dragonReducer from './dragons/dragons';
 
-const reducer = combineReducers({});
+const reducer = combineReducers({
+  dragon: dragonReducer,
+});
 
 const store = createStore(reducer, applyMiddleware(logger, thunk));
 
