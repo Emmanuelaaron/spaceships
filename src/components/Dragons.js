@@ -2,6 +2,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { bindActionCreators } from 'redux';
 import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 import { loadDragons } from '../redux/dragons/dragons';
 
 const Dragons = () => {
@@ -15,19 +16,20 @@ const Dragons = () => {
   }, []);
 
   return (
-    <div className="d-flex flex-column flex-md-row align-items-center mt-5">
+    <div className="d-flex flex-column flex-md-row mt-5 container align-items-md-start align-items-center align-items-md-stretch">
       {dragons.map((dragon) => (
         <Card
           bg="light"
           key={dragon.id}
           text="dark"
-          style={{ width: '50vw' }}
-          className="m-2 align-self-stretch"
+          style={{ width: '50vw', minWidth: '20rem' }}
+          className="m-2"
         >
           <Card.Img variant="left" src={dragon.flickr_images[0]} />
           <Card.Header>{dragon.type}</Card.Header>
           <Card.Body className="d-flex flex-column align-items-center justify-content-center">
             <Card.Title>{dragon.name}</Card.Title>
+            <Button variant="primary">Reserve Dragon</Button>
           </Card.Body>
         </Card>
       ))}
