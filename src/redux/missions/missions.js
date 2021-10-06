@@ -3,6 +3,7 @@ const URL = 'https://api.spacexdata.com/v3/missions';
 // Actions
 const LOAD = 'spaceships/missions/LOAD';
 const SELECT = 'spaceships/missions/SELECT';
+const LEAVE = 'spaceships/missions/LEAVE';
 // Reducer
 export default (state = [], action) => {
   switch (action.type) {
@@ -12,6 +13,13 @@ export default (state = [], action) => {
       const newState = state.map((mission) => {
         if (mission.mission_id !== action.payload) return mission;
         return { ...mission, reserved: true };
+      });
+      return newState;
+    }
+    case LEAVE: {
+      const newState = state.map((mission) => {
+        if (mission.mission_id !== action.payload) return mission;
+        return { ...mission, reserved: false };
       });
       return newState;
     }
@@ -34,5 +42,10 @@ export const loadMissions = () => async (dispatch) => {
 
 export const selectMission = (payload) => ({
   type: SELECT,
+  payload,
+});
+
+export const leaveMission = (payload) => ({
+  type: LEAVE,
   payload,
 });
