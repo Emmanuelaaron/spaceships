@@ -9,11 +9,13 @@ const MyProfile = () => {
     <Container>
       <Card style={{ width: '18rem' }}>
         <Card.Header>Missions</Card.Header>
-        {missions.map((mission) => (
-          <ListGroup key={mission.mission_id}>
-            {mission.reserved && <ListGroup.Item>{mission.mission_name}</ListGroup.Item>}
-          </ListGroup>
-        ))}
+        {missions
+          .filter((mission) => mission.reserved === true)
+          .map((filteredMission) => (
+            <ListGroup key={filteredMission.mission_id}>
+              <ListGroup.Item>{filteredMission.mission_name}</ListGroup.Item>
+            </ListGroup>
+          ))}
       </Card>
     </Container>
   );
