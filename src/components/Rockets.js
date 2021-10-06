@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { bindActionCreators } from 'redux';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
+import Badge from 'react-bootstrap/Badge';
 import { loadRockets, reserveRocket, cancelRocketReservation } from '../redux/rockets/rockets';
 
 const Rockets = () => {
@@ -30,10 +31,23 @@ const Rockets = () => {
             <Card.Img variant="left" src={rocket.flickr_images[0]} style={{ width: '200px', height: '200px', objectFit: 'cover' }} />
           </div>
           <div className="col-sm-12 col-md-6 col-lg-8 d-flex flex-column card-content pt-sm-3 pt-md-0">
-            <h1 className="rocket-heading">{rocket.name}</h1>
+            <h1 className="rocket-heading">
+              {rocket.reserved && (
+              <Badge
+                bg="success"
+                style={{ width: '170px' }}
+                className="mb-3"
+              >
+                Reserved
+              </Badge>
+              )}
+
+              {rocket.name}
+            </h1>
             <Card.Body className="d-flex flex-column align-items-center justify-content-center">
               <p>{rocket.description}</p>
             </Card.Body>
+
             <Button
               variant={rocket.reserved ? 'outline-secondary' : 'primary'}
               onClick={
