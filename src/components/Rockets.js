@@ -3,12 +3,13 @@ import { useEffect } from 'react';
 import { bindActionCreators } from 'redux';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import { loadRockets, reserveRocket } from '../redux/rockets/rockets';
+import { loadRockets, reserveRocket, cancelRocketReservation } from '../redux/rockets/rockets';
 
 const Rockets = () => {
   const dispatch = useDispatch();
   const loadRocketsAction = bindActionCreators(loadRockets, dispatch);
   const reserveRocketsAction = bindActionCreators(reserveRocket, dispatch);
+  const cancelRocketReservationAction = bindActionCreators(cancelRocketReservation, dispatch);
   const rockets = useSelector((state) => state.rockets);
 
   useEffect(() => {
@@ -34,11 +35,17 @@ const Rockets = () => {
               <p>{rocket.description}</p>
             </Card.Body>
             <Button
-              variant="primary"
-              onClick={() => reserveRocketsAction(rocket.id)}
+              variant={rocket.reserved ? 'outline-secondary' : 'primary'}
+              onClick={
+                () => {
+                  if (rocket.reserved) {
+                    cancelRocketReservationAction(rocket.id);
+                  } else reserveRocketsAction(rocket.id);
+                }
+              }
               style={{ width: '140px' }}
             >
-              Reserve Rocket
+              {rocket.reserved ? 'Cancel Reservation' : 'Reserve Rocket'}
             </Button>
           </div>
         </Card>
