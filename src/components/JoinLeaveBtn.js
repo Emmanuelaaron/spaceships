@@ -38,6 +38,6 @@ JoinLeaveBtn.propTypes = {
 
 JoinLeaveBtn.defaultProps = {
   reserved: false,
-  id: PropTypes.string,
+  id: 'default-id',
 };
 export default JoinLeaveBtn;
