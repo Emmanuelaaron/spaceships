@@ -1,6 +1,6 @@
 import Button from 'react-bootstrap/Button';
 import { useDispatch } from 'react-redux';
-import PropTypes from 'prop-types'; // eslint-disable-line import/no-extraneous-dependencies
+import PropTypes from 'prop-types';
 import { selectMission, leaveMission } from '../redux/missions/missions';
 
 const JoinLeaveBtn = ({ reserved, id }) => {
