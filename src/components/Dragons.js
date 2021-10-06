@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { bindActionCreators } from 'redux';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
+import Badge from 'react-bootstrap/Badge';
 import { loadDragons, reserveDragon, cancelReservation } from '../redux/dragons/dragons';
 
 const Dragons = () => {
@@ -28,11 +29,17 @@ const Dragons = () => {
           className="m-2"
         >
           <Card.Img variant="left" src={dragon.flickr_images[0]} />
-          <Card.Header>{dragon.type}</Card.Header>
+          <Card.Header>
+            {dragon.type.charAt(0).toUpperCase() + dragon.type.slice(1)}
+            {' '}
+            {dragon.reserved && (
+              <Badge bg="success">Reserved</Badge>
+            )}
+          </Card.Header>
           <Card.Body className="d-flex flex-column align-items-center justify-content-center">
             <Card.Title>{dragon.name}</Card.Title>
             <Button
-              variant={dragon.reserved ? 'danger' : 'primary'}
+              variant={dragon.reserved ? 'outline-secondary' : 'primary'}
               onClick={
                 () => {
                   if (dragon.reserved) {
