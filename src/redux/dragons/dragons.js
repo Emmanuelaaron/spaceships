@@ -3,7 +3,7 @@ const URL = 'https://api.spacexdata.com/v3/dragons';
 // Actions
 const LOAD = 'spaceships/dragons/LOAD';
 const RESERVE_DRAGON = 'spaceships/dragons/RESERVE_DRAGON';
-const CANCEL_RESERVATION = 'spaceships/dragons/CANCEL_RESERVATION';
+const CANCEL_DRAGON_RESERVATION = 'spaceships/dragons/CANCEL_DRAGON_RESERVATION';
 
 // Reducer
 export default (state = [], action) => {
@@ -17,7 +17,7 @@ export default (state = [], action) => {
       });
       return newState;
     }
-    case (CANCEL_RESERVATION): {
+    case (CANCEL_DRAGON_RESERVATION): {
       const newState = state.map((dragon) => {
         if (dragon.id !== action.id) return dragon;
         return { ...dragon, reserved: false };
@@ -46,7 +46,7 @@ export const reserveDragon = (id) => ({
   id,
 });
 
-export const cancelReservation = (id) => ({
-  type: CANCEL_RESERVATION,
+export const cancelDragonReservation = (id) => ({
+  type: CANCEL_DRAGON_RESERVATION,
   id,
 });
