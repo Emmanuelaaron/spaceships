@@ -3,12 +3,13 @@ import { useEffect } from 'react';
 import { bindActionCreators } from 'redux';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import { loadDragons, reserveDragon } from '../redux/dragons/dragons';
+import { loadDragons, reserveDragon, cancelReservation } from '../redux/dragons/dragons';
 
 const Dragons = () => {
   const dispatch = useDispatch();
   const loadDragonsAction = bindActionCreators(loadDragons, dispatch);
   const reserveDragonAction = bindActionCreators(reserveDragon, dispatch);
+  const cancelReservationAction = bindActionCreators(cancelReservation, dispatch);
   const dragons = useSelector((state) => state.dragons);
 
   useEffect(() => {
@@ -31,10 +32,16 @@ const Dragons = () => {
           <Card.Body className="d-flex flex-column align-items-center justify-content-center">
             <Card.Title>{dragon.name}</Card.Title>
             <Button
-              variant="primary"
-              onClick={() => reserveDragonAction(dragon.id)}
+              variant={dragon.reserved ? 'danger' : 'primary'}
+              onClick={
+                () => {
+                  if (dragon.reserved) {
+                    cancelReservationAction(dragon.id);
+                  } else reserveDragonAction(dragon.id);
+                }
+              }
             >
-              Reserve Dragon
+              {dragon.reserved ? 'Cancel Reservation' : 'Reserve Dragon'}
             </Button>
           </Card.Body>
         </Card>
