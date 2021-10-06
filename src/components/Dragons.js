@@ -4,13 +4,13 @@ import { bindActionCreators } from 'redux';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Badge from 'react-bootstrap/Badge';
-import { loadDragons, reserveDragon, cancelReservation } from '../redux/dragons/dragons';
+import { loadDragons, reserveDragon, cancelDragonReservation } from '../redux/dragons/dragons';
 
 const Dragons = () => {
   const dispatch = useDispatch();
   const loadDragonsAction = bindActionCreators(loadDragons, dispatch);
   const reserveDragonAction = bindActionCreators(reserveDragon, dispatch);
-  const cancelReservationAction = bindActionCreators(cancelReservation, dispatch);
+  const cancelDragonReservationAction = bindActionCreators(cancelDragonReservation, dispatch);
   const dragons = useSelector((state) => state.dragons);
 
   useEffect(() => {
@@ -51,7 +51,7 @@ const Dragons = () => {
               onClick={
                 () => {
                   if (dragon.reserved) {
-                    cancelReservationAction(dragon.id);
+                    cancelDragonReservationAction(dragon.id);
                   } else reserveDragonAction(dragon.id);
                 }
               }
