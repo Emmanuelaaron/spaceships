@@ -19,7 +19,7 @@ const JoinLeaveBtn = ({ reserved, id }) => {
 
   if (reserved === true) {
     return (
-      <Button onClick={leaveMissionToStore} variant="outline-secondary">
+      <Button onClick={leaveMissionToStore} variant="outline-danger">
         Leave Mission
       </Button>
     );
