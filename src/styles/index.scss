@@ -25,3 +25,20 @@ code {
 .black {
   color: black;
 }
+
+@media screen and (max-width: 690px) {
+  .rocket-image {
+    min-width: 55vw;
+    min-height: 55vw;
+  }
+}
+
+@media screen and (max-width: 755px) {
+  .rocket-heading {
+    text-align: center;
+  }
+
+  .card-content {
+    align-items: center;
+  }
+}
