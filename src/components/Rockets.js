@@ -3,11 +3,12 @@ import { useEffect } from 'react';
 import { bindActionCreators } from 'redux';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import { loadRockets } from '../redux/rockets/rockets';
+import { loadRockets, reserveRocket } from '../redux/rockets/rockets';
 
 const Rockets = () => {
   const dispatch = useDispatch();
   const loadRocketsAction = bindActionCreators(loadRockets, dispatch);
+  const reserveRocketsAction = bindActionCreators(reserveRocket, dispatch);
   const rockets = useSelector((state) => state.rockets);
 
   useEffect(() => {
@@ -32,7 +33,13 @@ const Rockets = () => {
             <Card.Body className="d-flex flex-column align-items-center justify-content-center">
               <p>{rocket.description}</p>
             </Card.Body>
-            <Button variant="primary" style={{ width: '140px' }}>Reserve Rocket</Button>
+            <Button
+              variant="primary"
+              onClick={() => reserveRocketsAction(rocket.id)}
+              style={{ width: '140px' }}
+            >
+              Reserve Rocket
+            </Button>
           </div>
         </Card>
       ))}

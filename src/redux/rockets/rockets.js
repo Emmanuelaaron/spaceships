@@ -2,12 +2,20 @@ const URL = 'https://api.spacexdata.com/v3/rockets';
 
 // Actions
 const LOAD = 'spaceships/rockets/LOAD';
+const RESERVE_ROCKET = 'spaceships/rockets/RESERVE_ROCKET';
 
 // Reducer
 export default (state = [], action) => {
   switch (action.type) {
     case (LOAD):
       return action.state;
+    case (RESERVE_ROCKET): {
+      const newState = state.map((rocket) => {
+        if (rocket.id !== action.id) return rocket;
+        return { ...rocket, reserved: true };
+      });
+      return newState;
+    }
     default: return state;
   }
 };
@@ -24,3 +32,8 @@ export const loadRockets = () => async (dispatch) => {
   }));
   dispatch({ type: LOAD, state });
 };
+
+export const reserveRocket = (id) => ({
+  type: RESERVE_ROCKET,
+  id,
+});
