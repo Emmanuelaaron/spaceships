@@ -1,6 +1,8 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { bindActionCreators } from 'redux';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 import { loadRockets } from '../redux/rockets/rockets';
 
 const Rockets = () => {
@@ -14,7 +16,27 @@ const Rockets = () => {
   }, []);
 
   return (
-    <div className="profile">coming soon</div>
+    <div>
+      {rockets.map((rocket) => (
+        <Card
+          bg="ligh"
+          key={rocket.id}
+          text="dark"
+          className="m-2 row flex-row align-items-center p-4"
+        >
+          <div className="col-sm-12 col-md-4 col-lg-3 text-center ">
+            <Card.Img variant="left" src={rocket.flickr_images[0]} style={{ width: '200px', height: '200px', objectFit: 'cover' }} />
+          </div>
+          <div className="col-sm-12 col-md-6 col-lg-8 d-flex flex-column card-content pt-sm-3 pt-md-0">
+            <h1 className="rocket-heading">{rocket.name}</h1>
+            <Card.Body className="d-flex flex-column align-items-center justify-content-center">
+              <p>{rocket.description}</p>
+            </Card.Body>
+            <Button variant="primary" style={{ width: '140px' }}>Reserve Rocket</Button>
+          </div>
+        </Card>
+      ))}
+    </div>
   );
 };
 
