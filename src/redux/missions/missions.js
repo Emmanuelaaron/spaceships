@@ -8,11 +8,13 @@ export default (state = [], action) => {
   switch (action.type) {
     case LOAD:
       return action.state;
-    case SELECT:
+    case SELECT: {
       const newState = state.map((mission) => {
         if (mission.mission_id !== action.payload) return mission;
         return { ...mission, reserved: true };
       });
+      return newState;
+    }
     default:
       return state;
   }
