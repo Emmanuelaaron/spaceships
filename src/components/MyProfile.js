@@ -6,6 +6,7 @@ import Container from 'react-bootstrap/Container';
 const MyProfile = () => {
   const missions = useSelector((state) => state.missions);
   const dragons = useSelector((state) => state.dragons);
+  const rockets = useSelector((state) => state.rockets);
 
   return (
     <Container className="d-flex">
@@ -16,6 +17,16 @@ const MyProfile = () => {
           .map((filteredMission) => (
             <ListGroup key={filteredMission.mission_id}>
               <ListGroup.Item>{filteredMission.mission_name}</ListGroup.Item>
+            </ListGroup>
+          ))}
+      </Card>
+      <Card style={{ width: '18rem' }}>
+        <Card.Header>Rockets</Card.Header>
+        {rockets
+          .filter((rocket) => rocket.reserved === true)
+          .map((filteredRocket) => (
+            <ListGroup key={filteredRocket.id}>
+              <ListGroup.Item>{filteredRocket.name}</ListGroup.Item>
             </ListGroup>
           ))}
       </Card>
