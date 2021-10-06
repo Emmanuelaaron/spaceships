@@ -32,7 +32,7 @@ const JoinLeaveBtn = ({ reserved, id }) => {
   );
 };
 JoinLeaveBtn.propTypes = {
-  reserved: PropTypes.bool,
+  reserved: PropTypes.oneOfType([PropTypes.bool, PropTypes.func]),
   id: PropTypes.string,
 };
 
