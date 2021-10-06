@@ -28,7 +28,15 @@ const Dragons = () => {
           style={{ width: '50vw', minWidth: '20rem' }}
           className="m-2"
         >
-          <Card.Img variant="left" src={dragon.flickr_images[0]} />
+          <Card.Img
+            variant="left"
+            src={dragon.flickr_images[0]}
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+            }}
+          />
           <Card.Header>
             {dragon.type.charAt(0).toUpperCase() + dragon.type.slice(1)}
             {' '}
