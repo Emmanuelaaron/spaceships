@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dragons component Use Jest snapshots to test the Dragons component renders Dragons component as expected 1`] = `
+<DocumentFragment>
+  <div
+    class="d-flex flex-column flex-md-row mt-5 container align-items-md-start align-items-center align-items-md-stretch"
+  >
+    <div
+      class="m-2 card bg-light text-dark"
+      style="width: 50vw; min-width: 20rem;"
+    >
+      <img
+        class="card-img-left"
+        src="https://i.imgur.com/9fWdwNv.jpg"
+        style="width: 100%; height: 100%; object-fit: cover;"
+      />
+      <div
+        class="card-header"
+      >
+        Capsule 
+      </div>
+      <div
+        class="d-flex flex-column align-items-center justify-content-center card-body"
+      >
+        <div
+          class="card-title h5"
+        >
+          Dragon 1
+        </div>
+        <button
+          class="btn btn-primary"
+          type="button"
+        >
+          Reserve Dragon
+        </button>
+      </div>
+    </div>
+    <div
+      class="m-2 card bg-light text-dark"
+      style="width: 50vw; min-width: 20rem;"
+    >
+      <img
+        class="card-img-left"
+        src="https://farm8.staticflickr.com/7647/16581815487_6d56cb32e1_b.jpg"
+        style="width: 100%; height: 100%; object-fit: cover;"
+      />
+      <div
+        class="card-header"
+      >
+        Capsule 
+      </div>
+      <div
+        class="d-flex flex-column align-items-center justify-content-center card-body"
+      >
+        <div
+          class="card-title h5"
+        >
+          Dragon 2
+        </div>
+        <button
+          class="btn btn-primary"
+          type="button"
+        >
+          Reserve Dragon
+        </button>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
