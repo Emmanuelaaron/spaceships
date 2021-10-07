@@ -53,4 +53,17 @@ describe('Unit tests for missions', () => {
       );
     });
   });
+  describe('action creators', () => {
+    it("returns the correct action for 'loadMissions' thunk", async () => {
+      await loadMissions()(dispatchMock);
+      expect(expectedOutputAction.type).toEqual(LOAD);
+      expect(expectedOutputAction.state).toEqual(expect.arrayContaining([expect.any(Object)]));
+    });
+    it("returns the correct action for 'selectMission' function", () => {
+      expect(selectMission('mission1').type).toEqual(SELECT);
+    });
+    it("returns the correct action for 'leaveMission' function", () => {
+      expect(leaveMission('mission1').type).toEqual(LEAVE);
+    });
+  });
 });
