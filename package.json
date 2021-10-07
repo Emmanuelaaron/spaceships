@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "bootstrap": "5.1.1",
     "prop-types": "^15.7.2",
@@ -49,6 +48,7 @@
     "@babel/eslint-parser": "7.x",
     "@babel/plugin-syntax-jsx": "7.x",
     "@babel/preset-react": "7.x",
+    "@testing-library/react": "^12.1.2",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "18.x",
