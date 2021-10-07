@@ -9,7 +9,7 @@ const NavBar = () => {
   const links = [
     {
       id: 1,
-      path: '/rockets',
+      path: '/',
       name: 'Rockets',
     },
     {
@@ -31,7 +31,7 @@ const NavBar = () => {
   return (
     <Navbar bg="light" expand="lg">
       <Container className="d-flex justify-content-between">
-        <Navbar.Brand href="/rockets">
+        <Navbar.Brand href="/">
           <Image src={planet} alt="App logo" width="50" className="me-3" />
           SpaceX Ships
         </Navbar.Brand>
@@ -43,6 +43,7 @@ const NavBar = () => {
                 <Nav.Item key={link.id}>
                   <NavLink
                     className="m-3 text-decoration-none"
+                    exact
                     to={link.path}
                     activeClassName="fw-bold text-decoration-underline"
                   >

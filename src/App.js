@@ -19,7 +19,7 @@ function App() {
         <Route path="/my-profile">
           <MyProfile />
         </Route>
-        <Route path={'/' || '/rockets'}>
+        <Route path="/">
           <Rockets />
         </Route>
       </Switch>
