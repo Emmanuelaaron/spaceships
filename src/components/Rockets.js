@@ -31,19 +31,20 @@ const Rockets = () => {
             <Card.Img variant="left" src={rocket.flickr_images[0]} style={{ width: '200px', height: '200px', objectFit: 'cover' }} />
           </div>
           <div className="col-sm-12 col-md-6 col-lg-8 d-flex flex-column card-content pt-sm-3 pt-md-0">
-            <h1 className="rocket-heading">
-              {rocket.reserved && (
-              <Badge
-                bg="success"
-                style={{ width: '170px' }}
-                className="mb-3"
-              >
-                Reserved
-              </Badge>
-              )}
-
+            <h1 className="rocket-heading d-inline-flex">
               {rocket.name}
             </h1>
+            <span className="bg-i">
+              {rocket.reserved && (
+                <Badge
+                  bg="success"
+                  style={{ width: '70px' }}
+                  className="mb-3"
+                >
+                  Reserved
+                </Badge>
+              )}
+            </span>
             <Card.Body className="d-flex flex-column align-items-center justify-content-center">
               <p>{rocket.description}</p>
             </Card.Body>
@@ -57,7 +58,7 @@ const Rockets = () => {
                   } else reserveRocketsAction(rocket.id);
                 }
               }
-              style={{ width: '140px' }}
+              style={{ width: '180px' }}
             >
               {rocket.reserved ? 'Cancel Reservation' : 'Reserve Rocket'}
             </Button>
