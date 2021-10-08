@@ -44,12 +44,9 @@ Below, we showcase screenshots of the app.
 - YarnJs (v. 1.22.10)
 - Git
 
-<!-- ## Live Demo
+## Live Demo
 
-Live demos for this project can be found on the following Cloud Platforms:
-- [Heroku](https://spaceships-enionsouza.herokuapp.com/),
-- [Netlify](https://spaceships-enionsouza.netlify.app), and
-- [GitHub Pages](https://enionsouza.github.io/spaceships/). -->
+Live demo for this project can be found in this [link](https://spaceships-emma-enio-mario.netlify.app/).
 
 ## Getting Started
 
