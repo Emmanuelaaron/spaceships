@@ -2,13 +2,14 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import Table from 'react-bootstrap/Table';
 import Badge from 'react-bootstrap/Badge';
+import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-import { loadMissions } from '../redux/missions/missions';
-import JoinLeaveBtn from './JoinLeaveBtn';
+import { loadMissions, selectMission, leaveMission } from '../redux/missions/missions';
 
 const Missions = () => {
   const dispatch = useDispatch();
   const missions = useSelector((state) => state.missions);
+
   useEffect(() => {
     if (missions.length === 0) dispatch(loadMissions());
     return () => null;
@@ -39,7 +40,18 @@ const Missions = () => {
                 {' '}
               </td>
               <td className="align-middle">
-                <JoinLeaveBtn reserved={mission.reserved} id={mission.mission_id} />
+                <Button
+                  variant={mission.reserved ? 'outline-danger' : 'outline-secondary'}
+                  onClick={
+                () => {
+                  if (mission.reserved) {
+                    dispatch(leaveMission(mission.mission_id));
+                  } else dispatch(selectMission(mission.mission_id));
+                }
+              }
+                >
+                  {mission.reserved ? 'Leave Mission' : 'Join Mission'}
+                </Button>
               </td>
             </tr>
           ))}
