@@ -1,70 +1,111 @@
-# Getting Started with Create React App
+<p align="center">
+  <a href="https://www.microverse.org/">
+    <img alt="Microverse" src="https://img.shields.io/badge/-Microverse-blueviolet?style=flat-square">
+  </a>
+  <a href="https://github.com/Emmanuelaaron/spaceships">
+    <img alt="GitHub last commit (branch)" src="https://img.shields.io/github/last-commit/Emmanuelaaron/spaceships/dev?color=blue&style=flat-square">
+  </a>
+  <a href="https://github.com/Emmanuelaaron/spaceships">
+    <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/Emmanuelaaron/spaceships?color=cyan&label=%E2%98%85%20stars%20&style=flat-square">
+  </a>
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# Space Ships
 
-In the project directory, you can run:
+## About
 
-### `yarn start`
+In this task, we worked with the real live data from the SpaceX API. Our task was to build a web application for a company that provides commercial and scientific space travel services. The application allows users to book rockets, dragons and join selected space missions.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Below, we showcase screenshots of the app.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<p align="center">
+    <img style="border: 1px solid black;" src="./docs/Screenshot1.png" width="700" alt="Rockets page">
+</p>
+<p align="center">
+    <img style="border: 1px solid black;" src="./docs/Screenshot2.png" width="700" alt="Missions page">
+</p>
+<p align="center">
+    <img style="border: 1px solid black;" src="./docs/Screenshot3.png" width="700" alt="Dragons page">
+</p>
+<p align="center">
+    <img style="border: 1px solid black;" src="./docs/Screenshot4.png" width="700"  alt="My Profile page">
+</p>
 
-### `yarn test`
+## Built With
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- HTML, CSS, JavaScript;
+- ReactJS, Redux;
+- VisualStudio Code, Git, & GitHub;
 
-### `yarn build`
+## Pre-requisites
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- NodeJs (v. 14.17)
+- YarnJs (v. 1.22.10)
+- Git
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Live Demo
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Live demos for this project can be found in this [link](https://spaceships-emma-enio-mario.netlify.app/).
 
-### `yarn eject`
+## Getting Started
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+To run this project, you only need a computer with internet connection and a browser installed, and follow these steps:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+1. In your terminal, in the folder of your preference, type the following bash command to clone this repository:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```sh
+git clone git@github.com:Emmanuelaaron/spaceships.git
+```
 
-## Learn More
+2. Now that you have already cloned the repo run the following commands to get the project up and running:
+```sh
+cd spaceships
+yarn
+yarn start
+```
+This should start your local server in [http://localhost:3000/](http://localhost:3000/). To stop it, hit `<CTRL> + C` on your keyboard.
+## Run tests
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+To test the App's components and logic, please, run the following command:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```sh
+yarn test --watchAll
+```
+When the tests are finished, just hit `q` key to leave the watch mode for the tests.
 
-### Code Splitting
+## Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+👤 **Mario Alberto Rodriguez Cota**
 
-### Analyzing the Bundle Size
+- GitHub: [@mariordgez](https://github.com/mariordgez)
+- Twitter: [@MarioRo75396624](https://twitter.com/MarioRo75396624)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/mario-alberto-rodriguez-cota-a2860a205)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+👤 **Ênio Neves de Souza**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- GitHub: [@enionsouza](https://github.com/enionsouza)
+- Twitter: [@enionsouza](https://twitter.com/enionsouza)
+- LinkedIn: [Enio Neves de Souza](https://www.linkedin.com/in/enio-neves-de-souza/)
 
-### Advanced Configuration
+👤 **Emmanuel Isabirye**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Github: [@EmmanuelAaron](https://github.com/Emmanuelaaron)
+- Twitter: [@EmmanuelAaron](https://twitter.com/EmmanuelIsabir1)
+- LinkedIn: [@EmmanuelAaron](https://www.linkedin.com/in/fullstackwebdev-emma/)
 
-### Deployment
+## 🤝 Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Contributions, issues, and feature requests are welcome!
 
-### `yarn build` fails to minify
+Feel free to check the [issues page](https://github.com/Emmanuelaaron/spaceships/issues).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## 📝 License
+
+This project is [MIT](./LICENSE) licensed.
